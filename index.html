@@ -135,7 +135,8 @@
   .hero-sub { font-family:var(--font-body); font-size:clamp(16px,1.4vw,20px); line-height:1.55; color:var(--sand-100); max-width:520px; margin-top:24px; }
   .hero-actions { display:flex; gap:14px; margin-top:34px; flex-wrap:wrap; align-items:center; }
   .hero-note { font-family:var(--font-body); font-size:12px; letter-spacing:.04em; color:rgba(247,242,232,.6); margin-top:20px; }
-  .scroll-cue { position:absolute; bottom:26px; left:50%; transform:translateX(-50%); color:var(--sand-100); display:flex; flex-direction:column; align-items:center; gap:6px; }
+  .scroll-cue { position:absolute; bottom:26px; left:50%; transform:translateX(-50%); color:var(--sand-100); display:flex; flex-direction:column; align-items:center; gap:6px; transition:opacity .4s ease; }
+  .scroll-cue.hide { opacity:0; pointer-events:none; }
   .scroll-cue span { font-family:var(--font-body); font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; }
 
   /* ---------- proof bar ---------- */
@@ -470,7 +471,7 @@
         <a href="https://tally.so/r/A7jjOl" target="_blank" rel="noopener" class="btn btn-primary btn-disp" style="font-size:16px;padding:16px 34px">Apply now <i data-lucide="arrow-right"></i></a>
         <a href="#experience" class="btn btn-ghost" style="color:var(--sand-50);border-color:rgba(247,242,232,.5)">See the week</a>
       </div>
-      <div class="hero-note">Limited to 12 players · accommodation not included</div>
+      <div class="hero-note">accommodation not included</div>
     </div>
   </div>
   <div class="scroll-cue">
@@ -560,7 +561,7 @@
         <h3 class="way-title disp">Private &amp; Corporate</h3>
         <div class="way-tag" style="color: rgb(248, 242, 235)">Built around your group.</div>
         <p class="way-body">We design tailored retreats for private groups and companies looking for a fully customized experience.</p>
-        <a href="mailto:contact@lapausapadel.com" class="way-cta">Get in touch <i data-lucide="arrow-right"></i></a>
+        <a href="/cdn-cgi/l/email-protection#4b2824253f2a283f0b272a3b2a3e382a3b2a2f2e2765282426" class="way-cta">Get in touch <i data-lucide="arrow-right"></i></a>
       </article>
     </div>
   </div>
@@ -746,7 +747,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q">Can I do both weeks?<span class="arrow"><i data-lucide="plus"></i></span></button>
-        <div class="faq-a"><div class="faq-a-inner">Possibly — reach out to us directly at contact@lapausapadel.com and we'll see what we can do.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Possibly — reach out to us directly at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="71121e1f05101205311d100110040210011015141d5f121e1c">[email&#160;protected]</a> and we'll see what we can do.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">How do I pay?<span class="arrow"><i data-lucide="plus"></i></span></button>
@@ -768,7 +769,7 @@
     <p class="final-sub">Applications are reviewed. You'll be placed in the retreat and group that fits your level and goals.</p>
     <!-- [TALLY_FORM_URL] -->
     <a href="https://tally.so/r/A7jjOl" target="_blank" rel="noopener" class="btn btn-primary btn-disp" style="font-size:16px;padding:17px 40px">Apply now <i data-lucide="arrow-right"></i></a>
-    <div class="final-reassure">Or <a href="mailto:contact@lapausapadel.com" style="color:var(--sand-50);text-decoration:underline;text-underline-offset:3px">get in touch</a> for private and corporate retreats.</div>
+    <div class="final-reassure">Or <a href="/cdn-cgi/l/email-protection#93f0fcfde7f2f0e7d3fff2e3f2e6e0f2e3f2f7f6ffbdf0fcfe" style="color:var(--sand-50);text-decoration:underline;text-underline-offset:3px">get in touch</a> for private and corporate retreats.</div>
   </div>
 </section>
 
@@ -782,16 +783,18 @@
     <span class="wm-text" style="font-size:20px">La&nbsp;Pausa<span class="wm-dot">.</span></span>
   </a>
   <div class="f-line">A The Ground Bali experience</div>
-  <div class="f-line">@lapausapadel · @thegroundbali · contact@lapausapadel.com</div>
+  <div class="f-line">@lapausapadel · @thegroundbali · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="12717d7c66737166527e736273676173627376777e3c717d7f">[email&#160;protected]</a></div>
   <div class="f-copy">© 2026 La Pausa. All rights reserved.</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   var nav = document.getElementById('nav');
   var navWordmark = document.getElementById('navWordmark');
+  var scrollCue = document.querySelector('.scroll-cue');
   function onScroll() {
     if (window.scrollY > 40) { nav.classList.add('scrolled'); navWordmark.style.setProperty('--wm-color', '#252018'); }
     else { nav.classList.remove('scrolled'); navWordmark.style.setProperty('--wm-color', 'var(--sand-50)'); }
+    if (scrollCue) scrollCue.classList.toggle('hide', window.scrollY > 40);
   }
   window.addEventListener('scroll', onScroll); onScroll();
 
